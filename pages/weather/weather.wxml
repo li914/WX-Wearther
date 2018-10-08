@@ -1,0 +1,107 @@
+<!--pages/weather/weather.wxml-->
+<!-- <text>pages/weather/weather.wxml</text> -->
+<view class='main'>
+  <view class='container' style='background-image:url({{picture}})'>
+    <view class='top'>
+      <view class='nav'>
+        <text>更新时间：{{updateTime}}</text>
+        <text class='address'>{{basic.city}}</text>
+      </view>
+      <view class='now'>
+        <view class='status'>
+          <text>{{now.tmp}}℃</text>
+          <text>{{now.cond.txt}}</text>
+          <image src='/images/weatherPic/w_{{now.cond.code}}.png'></image>
+        </view>
+        <view class='sun'>
+          <text>日出：{{daily_forecast[0].astro.sr}}</text>
+          <text>日落：{{daily_forecast[0].astro.ss}}</text>
+        </view>
+        <view class='life'>
+          <view>
+            <text>风向：{{now.wind.dir}}</text>
+          </view>
+          <view>
+            <text>风力：{{now.wind.sc}}</text>
+          </view>
+          <view>
+            <text>能见度：{{now.vis}}</text>
+          </view>
+          <view>
+            <text>湿度：{{now.hum}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='forecast'>
+      <view>
+        <view>
+          <text>明天</text>
+        </view>
+        <view></view>
+        <view>
+          <text>{{daily_forecast[1].cond.txt_d}}</text>
+        </view>
+        <view>
+          <text>{{daily_forecast[1].tmp.min}}℃-{{daily_forecast[1].tmp.max}}℃</text>
+        </view>
+        <view>
+          <text>{{daily_forecast[1].wind.dir}}</text>
+        </view>
+      </view>
+      <view></view>
+      <view>
+        <view>
+          <text>后天</text>
+        </view>
+        <view></view>
+        <view>
+          <text>{{daily_forecast[2].cond.txt_d}}</text>
+        </view>
+        <view>
+          <text>{{daily_forecast[2].tmp.min}}℃-{{daily_forecast[2].tmp.max}}℃</text>
+        </view>
+        <view>
+          <text>{{daily_forecast[2].wind.dir}}</text>
+        </view>
+      </view>
+    </view>
+    <view>未来24小时天气</view>
+    <!-- <view id='canvasHieght'>
+      <canvas canvas-id='hourly_forecast' style='width:{{canvasWidth}}px;height:480px;'></canvas>
+    </view> -->
+    <view class='hourly_forecast'>
+      <!-- <image style='width:{{canvasWidth}}px;height:220px;' src='{{canvasSavaPath}}'></image> -->
+      <view class='item'>
+        <view>现在</view>
+        <view>{{now.wind.dir}}</view>
+        <view>
+          <image src='/images/weatherPic/w_{{now.cond.code}}.png' style='width:28px;height:28px;'></image>
+        </view>
+        <view>{{now.tmp}}℃</view>
+      </view>
+      <view class='item' wx:for="{{hourly_forecast}}" wx:for-item="item" wx:for-index="index">
+        <view>{{hourlyTime[index]}}</view>
+        <view>{{item.wind.dir}}</view>
+        <view>
+          <image src='/images/weatherPic/w_{{item.cond.code}}.png' style='width:28px;height:28px;'></image>
+        </view>
+        <view>{{item.tmp}}℃</view>
+      </view>
+    </view>
+    <view>未来7天天气</view>
+    <view class='day_forecast'>
+    <canvas canvas-id='day_canvas' style='height:380px;width:100vw;'></canvas>
+      <!-- <view wx:for="{{daily_forecast}}" wx:for-item="item" wx:for-index="index" class='day_info'>
+        <view>{{dayTime[index]}}</view>
+        <view>{{item.cond.txt.d}}</view>
+        <view>
+          <image src='/images/weatherPic/w_{{item.cond.code_d}}.png'></image>
+        </view>
+        <view>{{item.tmp.min}}℃-{{item.tmp.max}}℃</view>
+        <view>{{item.wind.dir}}</view>
+        <view>{{item.wind.sc}}</view>
+      </view> -->
+    </view>
+  </view>
+</view>

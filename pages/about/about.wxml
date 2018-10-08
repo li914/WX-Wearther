@@ -1,0 +1,34 @@
+<!--pages/about/about.wxml-->
+<view class='main'>
+  <view class='pic'>
+    <image src='{{picture}}' style='width:100vw;height:45vh;'></image>
+  </view>
+  <view class='explain'>
+    <text>其它：</text>
+    <view>如果您觉得该小程序还不错，那么如果可能，请分享该小程序给您的朋友!</view>
+    <view style='font-size:12px;'>分享，当然是不可能的！</view>
+    <view>
+      <button open-type="share" bindtap='share'>分享该小程序</button>
+    </view>
+  </view>
+  <view class='explain'>
+    <text>说明：</text>
+    <view>
+      1. 该小程序数据均来自与和风天气API,如果有数据错误，请联系该网站。
+    </view>
+    <view>
+      2.该小程序如果有在您不知道的情况下，使用了您的相关数据以及插件，ui组件，请联系我（下面有我的email），我进行删除。
+    </view>
+    <view>
+      3.如果该小程序发生错误，无法正常显示，请邮件联系我，谢谢。
+    </view>
+  </view>
+  <view class='explain'>
+  <text>更新日志：</text>
+  <view>第三次更新，修改ui界面，以及后台请求路径，优化画面。</view>
+  </view>
+  <view class='explain'>
+    <text> 作者：</text>
+    <view>该小程序来自于li914，如若联系，请发邮件到：1837725661@qq.com</view>
+  </view>
+</view>

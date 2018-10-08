@@ -1,0 +1,28 @@
+/* pages/about/about.wxss */
+.main{
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #9dd1f7;
+  color: #fff;
+  font-size: 14px;
+}
+.main .pic{
+  width: 100vw;
+  height: 45vh;
+}
+.main .explain{
+  margin: 7px 0;
+  width: 100vw;
+  border-bottom: 1px solid rgba(144, 144, 144, 0.3);
+  padding: 3px 0;
+}
+.main .explain text{
+  font-size: 16px;
+}
+.main .explain view{
+  text-indent: 2em;
+}
+.main .explain view button{
+  background-color: #1AAD19;
+  color: #fff;
+}

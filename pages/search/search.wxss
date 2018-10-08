@@ -1,0 +1,123 @@
+/* pages/search/search.wxss */
+view{margin: 0;padding: 0;}
+.main {
+  min-height: 100vh;
+  background-color: #9dd1f7;
+  color: #fff;
+}
+
+.main .top {
+  width: 100vw;
+  margin-top: 3px;
+}
+
+.main .top input {
+  height: 33px;
+  width: 94vw;
+  float: left;
+  margin-bottom: 7px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.main .top icon {
+  float: left;
+  width: 3vw;
+}
+
+.main .content {
+  clear: both;
+}
+
+.main .hot_city {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: wheat; */
+}
+
+.main .hot_city view {
+  flex-basis: 20vw;
+  height: 32px;
+  margin: 7px 7px;
+  text-align: center;
+  background-color: rgba(144, 144, 144, 0.3);
+}
+
+.main .city_list {
+  clear: both;
+}
+
+.main .city_list .item {
+  width: 100vw;
+  height: 33px;
+  border-top: 1px solid rgba(144, 144, 144, 0.4);
+  border-bottom: 1px solid rgba(144, 144, 144, 0.4);
+  text-align: center;
+  clear: both;
+}
+
+.main .city_list .item text:nth-child(1) {
+  /* width: 63px; */
+  width: 70vw;
+  display: block;
+  float: left;
+  text-align: left;
+  height: 100%;
+  text-indent: 1em;
+  background-color: #f8f8f8;
+  color: #000;
+}
+
+.main .city_list .item text:nth-child(2) {
+  float: right;
+  /* width: 63px; */
+  width: 15vw;
+  display: block;
+  height: 100%;
+  border-right: 1px solid rgba(144, 144, 144, 0.3);
+  border-radius: 3px;
+  background-color: #e64340;
+}
+
+.main .city_list .item text:nth-child(3) {
+  float: right;
+  /* width: 63px; */
+  width: 14vw;
+  height: 100%;
+  display: block;
+  border-left: 1px solid rgba(144, 144, 144, 0.3);
+  border-right: 1px solid rgba(144, 144, 144, 0.3);
+  /* margin-left: 7px; */
+  border-radius: 3px;
+  background-color: #1aad19;
+}
+
+.main .search_list {
+  width: 100vh;
+  clear: both;
+  /* background-color: rgba(144, 144, 144, 0.6); */
+}
+
+main .search_list  .search_item {
+  border-bottom: 1px solid rgba(144, 144, 144, 0.7);
+  background-color: rgba(144, 144, 144, 0.4);
+  width: 100vw;
+  margin-bottom: 7px;
+  text-align: left;
+}
+
+.main .search_list .search_item text {
+  width: 28vw;
+  height: 30px;
+  display: inline-block;
+  margin: 7px 17px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.main .search_list .search_item view {
+  width: 100vw;
+  height: 1px;
+  background-color: rgba(144, 144, 144, 0.3);
+}

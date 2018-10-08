@@ -1,0 +1,56 @@
+<!--pages/life/life.wxml-->
+<!-- <text>pages/life/life.wxml</text> -->
+<view class='main'>
+  <view class='top'>
+    <view class='nav'>
+      <text>{{basic.city}}</text>
+      <image src='/images/weatherPic/local.png'></image>
+      <text>{{now.cond.txt}}</text>
+    </view>
+  </view>
+  <view>空气指数:</view>
+  <view class='life'>
+    <view>空气质量：{{aqi.city.aqi.city}}</view>
+    <view>PM25:{{aqi.city.pm25}}</view>
+    <view>PM10:{{aqi.city.pm10}}</view>
+    <view>二氧化氮（no2）：{{aqi.city.no2}}</view>
+    <view>二氧化硫（so2）：{{aqi.city.so2}}</view>
+    <view>一氧化炭（co）：{{aqi.city.co}}</view>
+    <view>臭氧（o3）：{{aqi.city.o3}}</view>
+  </view>
+  <view>生活指数以及建议：</view>
+  <view class='suggestion'>
+    <view class='item'>
+      <view class='brf'>空气指数：{{suggestion.air.brf}}</view>
+      <view class='txt'>{{suggestion.air.txt}}</view>
+    </view>
+    <view class='item'>
+      <view class='brf'>舒适度指数：{{suggestion.comf.brf}}</view>
+      <view class='txt'>{{suggestion.comf.txt}}</view>
+    </view>
+    <view class='item'>
+      <view class='brf'>洗车指数：{{suggestion.cw.brf}}</view>
+      <view class='txt'>{{suggestion.cw.txt}}</view>
+    </view>
+    <view class='item'>
+      <view class='brf'>穿衣指数:{{suggestion.drsg.brf}}</view>
+      <view class='txt'>{{suggestion.drsg.txt}}</view>
+    </view>
+    <view class='item'>
+      <view class='brf'>感冒指数:{{suggestion.flu.brf}}</view>
+      <view class='txt'>{{suggestion.flu.txt}}</view>
+    </view>
+    <view class='item'>
+      <view class='brf'>运动指数:{{suggestion.sport.brf}}</view>
+      <view class='txt'>{{suggestion.sport.txt}}</view>
+    </view>
+     <view class='item'>
+      <view class='brf'>旅游指数:{{suggestion.trav.brf}}</view>
+      <view class='txt'>{{suggestion.trav.txt}}</view>
+    </view>
+     <view class='item'>
+      <view class='brf'>紫外线指数:{{suggestion.uv.brf}}</view>
+      <view class='txt'>{{suggestion.uv.txt}}</view>
+    </view>
+  </view>
+</view>

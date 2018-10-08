@@ -1,0 +1,30 @@
+<!--pages/search/search.wxml-->
+<!-- <text>pages/search/search.wxml</text> -->
+<view class='main'>
+  <view class='top'>
+    <input value='{{value}}' type='text' placeholder-style="color:#fff" placeholder='输入城市名称' bindinput="inputFocus"></input>
+    <icon bindtap='clearInputText' type='clear' color='{{iconColor}}'></icon>
+  </view>
+  <view class='content' wx:if="{{!searchCityList.length>0}}">
+    <view>热门城市搜索：</view>
+    <view class='hot_city'>
+      <view bindtap='choosesHotCity' wx:for="{{hotCity}}" wx:for-item="item" wx:for-index="index" data-item='{{item}}'>{{item.location}}</view>
+    </view>
+    <view>城市列表：</view>
+    <view class='city_list'>
+      <view class='item' wx:for="{{locationCity}}" wx:for-item='item' wx:for-index='index'>
+        <text>{{item.location}}</text>
+        <text data-index='{{index}}' data-item='{{item}}' bindtap='delCity'>删除</text>
+        <text data-item='{{item}}' bindtap='choosesHotCity'>切换</text>
+      </view>
+    </view>
+  </view>
+  <view class='search_list'>
+    <view class='search_item' wx:for="{{searchCityList}}" wx:for-item="item" wx:for-index="index" data-item='{{item}}' bindtap='choosesHotCity'>
+      <text>{{item.location}}</text>
+      <text>{{item.parent_city}}</text>
+      <text>{{item.admin_area}}</text>
+      <view></view>
+    </view>
+  </view>
+</view>
