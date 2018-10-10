@@ -26,6 +26,7 @@
   <view class='explain'>
   <text>更新日志：</text>
   <view>第三次更新，修改ui界面，以及后台请求路径，优化画面。</view>
+  <view>第四次更新，修改api接口。</view>
   </view>
   <view class='explain'>
     <text> 作者：</text>

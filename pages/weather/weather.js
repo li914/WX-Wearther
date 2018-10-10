@@ -1,6 +1,8 @@
 // pages/weather/weather.js
 import _storage from '../../tools/storage.js';
 import _http from '../../tools/http.js';
+const _app=getApp();
+const _global = getApp().globalData;
 Page({
 
   /**
@@ -135,6 +137,8 @@ Page({
    */
   onReady: function() {
     console.log("onReady")
+    console.log(_app);
+    console.log(_global.URL);
   },
 
   /**
@@ -186,19 +190,20 @@ Page({
         let param = 'location=' + res.longitude + ',' + res.latitude;
         console.log(param);
         _http.get({
-          url: 'https://api.li914.com/location/find?' + param,
+          //url: 'https://api.li914.com/location/find?' + param,
+          url: _global.URL+'location/api/find?' + param,
           success: function(res) {
-            console.log(res);
+            console.log(res,'find');
             var currentLocation = _storage.getSync('currentLocation');
 
             if (currentLocation) {
               return;
             }
             let arr = new Array();
-            arr.push(res.result[0]);
+            arr.push(res.data[0]);
             console.log(arr);
             _storage.setSync('location', arr);
-            let item = res.result[0];
+            let item = res.data[0];
             item.selected = true;
             _storage.setSync('currentLocation', item);
             let cid = res.result[0].cid;
@@ -219,18 +224,18 @@ Page({
     wx.showLoading({
       title: '天气数据加载中',
     });
-    let url = 'https://api.li914.com/weather/allInfo?city=' + city;
+    let url = _global.URL+'weather/api/allInfo?city=' + city;
     _http.get({
       url: url,
       success: function(res) {
-        console.log(res);
+        console.log(res,"1111");
         if (res.code == 1 && res.msg == 'ok') {
-          let basic = res.result.basic;
-          let aqi = res.result.aqi;
-          let hourly_forecast = res.result.hourly_forecast;
-          let daily_forecast = res.result.daily_forecast;
-          let now = res.result.now;
-          let suggestion = res.result.suggestion;
+          let basic = res.data.basic;
+          let aqi = res.data.aqi;
+          let hourly_forecast = res.data.hourly_forecast;
+          let daily_forecast = res.data.daily_forecast;
+          let now = res.data.now;
+          let suggestion = res.data.suggestion;
           let updateTime = basic.update.loc.split(' ')[1];
           _that.setData({
             basic: basic,
@@ -243,7 +248,7 @@ Page({
           });
           // _that.canvasHourly(hourly_forecast);
           _that.dataTime(daily_forecast);
-          _storage.setSync('weather', res.result);
+          _storage.setSync('weather', res.data);
           _that.stopToast();
           _that.stopPullRef();
           _that.hourlyTime(hourly_forecast);
@@ -291,11 +296,12 @@ Page({
   picture() {
     var _that = this;
     _http.get({
-      url: "https://api.li914.com/picture/weatherPic",
+      // url: "https://api.li914.com/picture/weatherPic",
+      url:_global.URL+"picture/api/weatherPic",
       success(res) {
         console.log(res);
         _that.setData({
-          picture: res.result.picture
+          picture: res.data.picture
         })
       }
     })

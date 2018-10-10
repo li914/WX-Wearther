@@ -1,6 +1,8 @@
 // pages/about/about.js
 import _storage from '../../tools/storage.js';
 import _http from '../../tools/http.js';
+const _app = getApp();
+const _global = getApp().globalData;
 Page({
 
   /**
@@ -16,11 +18,11 @@ Page({
   onLoad: function (options) {
     var _that=this;
     _http.get({
-      url:"https://api.li914.com/picture/weatherPic",
+      url: _global.URL + "picture/api/weatherPic",
       success(res){
         console.log(res);
         _that.setData({
-          picture:res.result.picture
+          picture:res.data.picture
         })
       }
     })

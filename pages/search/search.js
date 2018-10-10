@@ -1,6 +1,8 @@
 // pages/search/search.js
 import _storage from '../../tools/storage.js';
 import _http from '../../tools/http.js';
+const _app = getApp();
+const _global = getApp().globalData;
 Page({
 
   /**
@@ -25,11 +27,11 @@ Page({
 
     var _that = this;
     wx.request({
-      url: 'https://api.li914.com/location/top',
+      url: _global.URL+'location/api/top',
       success: function(res) {
         // console.log(res);
         _that.setData({
-          hotCity: res.data.result
+          hotCity: res.data.data
         })
       },
       fail: function(res) {
@@ -82,13 +84,13 @@ Page({
       return;
     }
     _http.get({
-      url: 'https://api.li914.com/location/find?location=' + value,
+      url: _global.URL+'location/api/find?location=' + value,
       success: function(res) {
         // console.log(res);
         if (res.code == 1 && res.msg == 'ok') {
-          console.log(res.result);
+          console.log(res.data);
           _that.setData({
-            searchCityList: res.result
+            searchCityList: res.data
           });
         }
       }

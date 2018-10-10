@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    URL:"http://mytest.tp5-demo.com/"
   }
 })
