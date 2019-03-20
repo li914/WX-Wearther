@@ -13,9 +13,7 @@
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor": "red",
-    "backgroudColor": "#e5e5e5",
-    "list": [
+    "selectedColor": "red",    "list": [
       {
         "pagePath": "pages/weather/weather",
         "text": "天气"
